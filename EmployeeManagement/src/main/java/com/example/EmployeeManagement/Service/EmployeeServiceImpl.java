@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
-    @Override
+    //   @Override
 //    public Employee findEmpByID(int empID) {
 //        Employee employee = employeeRepo.getById(empID);
 //        if (employee!=null){
@@ -36,28 +36,31 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee addEmployee(Employee employee) {
         if (employee!=null){
-            employeeRepo.saveAndFlush(employee);
-            return employee;
+            return employeeRepo.saveAndFlush(employee);
         }
         return null;
     }
 
-    @Override
-    public boolean deleteEmployee(int empID) {
-        employeeRepo.deleteById(empID);
-        return true;
-    }
+//    @Override
+//    public boolean deleteEmployee(int empID) {
+//        employeeRepo.deleteById(empID);
+//        return true;
+//    }
+
+//    @Override
+//    public boolean updateEmployee(Employee employee) {
+//        Employee employee1 = employeeRepo.getById(employee.getEmpID());
+//
+//        employee1.setEmpName(employee.getEmpName());
+//        employeeRepo.saveAndFlush(employee1);
+//        return true;
+//    }
 
     @Override
-    public boolean updateEmployee(Employee employee) {
-        Employee employee1 = employeeRepo.getById(employee.getEmpID());
-
-        employee1.setEmpName(employee.getEmpName());
-        employeeRepo.saveAndFlush(employee1);
-        return true;
+    public boolean validateEmployee(String empName, String password) {
+        Employee employee = employeeRepo.validateEmp(empName, password);
+        return employee != null;
     }
-
-
 
 
 }

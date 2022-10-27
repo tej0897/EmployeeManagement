@@ -8,7 +8,7 @@ public class Employee {
     @Id
     private int empID;
     private String empName;
-    private String empMailID;
+    private String password;
 
     public int getEmpID() {
         return empID;
@@ -26,18 +26,18 @@ public class Employee {
         this.empName = empName;
     }
 
-    public String getEmpMailID() {
-        return empMailID;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmpMailID(String empMailID) {
-        this.empMailID = empMailID;
+    public void setPassword(String setPassword) {
+        this.password = setPassword;
     }
 
-    public Employee(int empID, String empName, String empMailID) {
+    public Employee(int empID, String empName, String password) {
         this.empID = empID;
         this.empName = empName;
-        this.empMailID = empMailID;
+        this.password = password;
     }
 
     public Employee() {
