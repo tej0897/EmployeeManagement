@@ -25,6 +25,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+//    public Employee findEmpByID(int empID) {
+//        Employee employee = employeeRepo.getById(empID);
+//        if (employee!=null){
+//            return employee;
+//        }
+//        return null;
+//    }
+
+    @Override
     public Employee addEmployee(Employee employee) {
         if (employee!=null){
             employeeRepo.saveAndFlush(employee);
@@ -47,4 +56,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepo.saveAndFlush(employee1);
         return true;
     }
+
+
+
+
 }

@@ -26,8 +26,17 @@ public class EmployeeController {
         return new ResponseEntity<String>("Employee List is empty", HttpStatus.NO_CONTENT);
     }
 
+//    @GetMapping("/findEmp/{empID}")
+//    public ResponseEntity<?> findEmp(@PathVariable("empID") int empID){
+//        Employee employee = employeeService.findEmpByID(empID);
+//        if (employee!=null){
+//            return new ResponseEntity<Employee>(employee, HttpStatus.FOUND);
+//        }
+//        return new ResponseEntity<String>("Employee Not Found",HttpStatus.NOT_FOUND);
+//    }
 
-    @PostMapping("addEmp")
+
+    @PostMapping("/addEmp")
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee){
         if (employeeService.addEmployee(employee)!=null){
             return new ResponseEntity<Employee>(employee, HttpStatus.CREATED);
@@ -42,6 +51,8 @@ public class EmployeeController {
         }
         return new ResponseEntity<String>("Employee Record cannot be Deleted",HttpStatus.CONFLICT);
     }
+
+
 
     @PutMapping("updateEmp")
     public ResponseEntity<?> updateEmployee(@RequestBody Employee employee){

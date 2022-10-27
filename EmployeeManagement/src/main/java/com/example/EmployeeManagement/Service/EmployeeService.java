@@ -10,6 +10,6 @@ public interface EmployeeService {
     public Employee addEmployee(Employee employee);
     public boolean deleteEmployee( int empID);
     public boolean updateEmployee(Employee employee);
-
+//    public Employee findEmpByID(int empID);
 }
 
