@@ -8,11 +8,10 @@ public interface EmployeeService {
 
     public List<Employee> getAllEmployees();
     public Employee addEmployee(Employee employee);
-//    public boolean deleteEmployee( int empID);
 //    public boolean updateEmployee(Employee employee);
 
     public boolean validateEmployee(String empName, String password);
 
-//    public Employee findEmpByID(int empID);
+    public Employee findEmpByID(int empID);
 }
 

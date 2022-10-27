@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -60,6 +61,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     public boolean validateEmployee(String empName, String password) {
         Employee employee = employeeRepo.validateEmp(empName, password);
         return employee != null;
+    }
+
+    @Override
+    public Employee findEmpByID(int empID) {
+        Optional<Employee> employee = employeeRepo.findById(empID);
+        if (employee.isPresent()){
+            return employee.get();
+        }
+        return null;
     }
 
 
