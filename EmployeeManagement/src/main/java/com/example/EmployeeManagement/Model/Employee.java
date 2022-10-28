@@ -2,6 +2,7 @@ package com.example.EmployeeManagement.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -9,6 +10,8 @@ public class Employee {
     private int empID;
     private String empName;
     private String password;
+
+    List<String> userList;
 
     public int getEmpID() {
         return empID;
@@ -22,8 +25,9 @@ public class Employee {
         return empName;
     }
 
-    public void setEmpName(String empName) {
+    public String setEmpName(String empName) {
         this.empName = empName;
+        return empName;
     }
 
     public String getPassword() {
@@ -41,5 +45,13 @@ public class Employee {
     }
 
     public Employee() {
+    }
+
+    public List<String> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<String> userList) {
+        this.userList = userList;
     }
 }
